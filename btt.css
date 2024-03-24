@@ -1,0 +1,169 @@
+@import url('//fonts.googleapis.com/css2?family=Poppins:ital,wght@@,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root{
+  --primary-color: rgb(131, 213, 131);/*khai biến cho mã màu*/
+}
+*{/*reset css, không sợ bị lỗi*/
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    background: linear-gradient(to right, #4c5797, rgb(63, 99, 156));
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+
+}
+
+.card{
+  margin: 80px auto;
+  width: 450px;
+  height: 550px;
+  background:linear-gradient(to right, #c392bc, #f3f3f4);;
+  padding: 30px;
+  border-radius: 20px;
+  color: #333 ;
+  position: relative;
+  box-shadow: 0 0 10px rgba (0,0,0,0.2);
+}
+
+.card_heart,.card_cart{
+  font-size: 30px;
+  position:absolute;
+  left: 20px;
+  top: 15px;
+  cursor: pointer;
+}
+
+.card_cart{
+  left: unset;/*right không ghi đè left được nên có thuộc tính unset*/
+  right: 20px;
+}
+
+.card_img{
+  width: 100%;
+  text-align:center;
+  color:rgb(2, 3, 3); 
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
+  
+  transition: 0.5s ease- in- out;
+}
+
+.card_img img{
+  width: 80%;
+  height: 80%;
+  object-fit: cover; /*ảnh to nhưng sẽ tự co vào*/
+}
+
+.card_title {
+   font-size: 25px;
+  font-weight: bold;
+  transition: 0.5s;
+  text-align: center; 
+
+}
+.card_price{
+  font-size: 18px;
+  transition: 0.5s;
+  text-align: center; 
+}
+
+.card_title{
+  color: rgb(8, 8, 10);
+
+  text-align: center;
+
+}
+
+.card_size, .card_color{
+  display: flex;
+  align-items:center;
+  margin-bottom: 10px;
+}
+.card_size {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Căn chỉnh các phần tử theo chiều dọc */
+}
+
+.card_size button {
+  padding: 1px 10px;
+  background: rgd(220, 211, 211);
+  color: black;
+  border-radius: 5px;
+  margin: 0 5px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.card_color_green{
+  background:green;
+}
+
+
+.card_color_red{
+  background:red;
+}
+
+.card_color_yellow{
+  background: rgb(202, 232, 9);
+}
+
+.card_action button{
+  background: var(--primary-color);
+  border: none;
+  outline: none;
+  color:aliceblue;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-right: 10px;
+  transition: 0.25s;
+  cursor: pointer;
+  text-align: center;
+}
+
+.card_action button:hover{
+  transform: scale(0.9);
+}
+
+.card:hover .card_img{
+  transform: translateY(-90px) rotate(-20deg);
+}
+
+.card:hover .card_title{
+  transform: translate(-35px, -70px);
+}
+
+.card:hover .card_price{
+  transform: translate(-117px, -72px);
+}
+
+.card_size{
+  margin-top: 150px;
+  visibility: hidden;
+  opacity: 0;
+  text-align: center; 
+}
+
+.card_size, .card_color, .card_action{
+  visibility: hidden;
+  opacity:0;
+  transition:0.5s;
+  transition-delay:0.4s;
+  text-align: center ;
+}
+
+.card:hover .card_size,
+.card:hover .card_color,
+.card:hover .card_action{
+  visibility:visible;
+  opacity:100;
+}
+
+.card:hover .card_size{
+  margin-top: -30px;
+}
